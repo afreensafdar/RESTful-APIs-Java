@@ -6,3 +6,4 @@ Module 2- Intro to REST
 - Java version 8
 - Maven
 - MySQL Desktop 5.6 =>MySQL workbench 6
+- Test CRUD operations -Postman
