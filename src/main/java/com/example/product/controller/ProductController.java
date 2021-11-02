@@ -10,10 +10,15 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(path="api/products")
 public class ProductController {
 
+  private final ProductService service;
+
   @Autowired
-  private ProductService service;
+  public ProductController(ProductService service) {
+    this.service = service;
+  }
 
   // RESTful API methods for Retrieval operations
 
@@ -31,4 +36,34 @@ public class ProductController {
       return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
     }
   }
+
+  @PostMapping("/products")
+  public void add(@RequestBody Product product) {
+    service.save(product);
+  }
+
+
+  // RESTful API method for Update operation
+
+  @PutMapping("/products/{id}")
+  public ResponseEntity<?> update(@RequestBody Product product, @PathVariable Integer id) {
+    try {
+      Product existProduct = service.get(id);
+      service.save(product);
+      return new ResponseEntity<>(HttpStatus.OK);
+    } catch (NoSuchElementException e) {
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+  }
+
+  // RESTful API method for Delete operation
+  @DeleteMapping("/products/{id}")
+  public void delete(@PathVariable Integer id) {
+    service.delete(id);
+  }
+
+
+
+
+
 }
