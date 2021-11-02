@@ -7,18 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="PRODUCTSS")
+/* Domain Model Class
+create the Product class to map with the product table in the database */
+
+@Entity //Jpa automatically maps class to Db table
+@Table(name="PRODUCTS") //name of table where record to be stored ,rename table
+
 public class Product {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.IDENTITY) //id should be generated automatically
   private Integer id;
-  @Column
+  @Column (name = "Product_Name") // @Column
   private String name;
-  @Column
+  @Column (name = "Product_Brand")
   private String brand;
-  @Column
+  @Column (name = "Product_Price")
   private float price;
 
   public Product() {
@@ -31,23 +35,18 @@ public class Product {
     this.price = price;
   }
 
-  public String getName() {
-    return name;
-  }
 
-  public String getBrand() {
-    return brand;
-  }
+  // Getters and Setters..
 
-  public float getPrice() {
-    return price;
-  }
+  public String getName() { return name; }
+
+  public String getBrand() { return brand; }
+
+  public float getPrice() { return price; }
 
   public Integer getId() {
     return id;
   }
-
-  // getters and setters..
 
   public void setId(Integer id) {
     this.id = id;
