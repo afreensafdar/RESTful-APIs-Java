@@ -7,3 +7,14 @@ Module 2- Intro to REST- Multiverse
 - Maven
 - MySQL Desktop 5.6 =>MySQL workbench 6
 - Test CRUD operations -Postman
+
+Create Table in MySQL workbench
+CREATE TABLE product (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(45) NOT NULL,
+brand varchar(45) NOT NULL,
+  price float NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
