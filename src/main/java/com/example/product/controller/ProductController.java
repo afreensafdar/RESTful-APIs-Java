@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 // @RestController annotation define controller and enables the handler methods in this controller to be exposed as RESTful APIs,handles routes
 
 
-@RequestMapping(path="api/products")
+@RequestMapping("api/products")
 public class ProductController {
 
   private final ProductService service;

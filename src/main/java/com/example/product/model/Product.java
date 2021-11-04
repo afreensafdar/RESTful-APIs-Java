@@ -24,15 +24,26 @@ public class Product {
   private String brand;
   @Column (name = "Product_Price")
   private float price;
+  @Column (name="password")
+  private String password;
+
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
   public Product() {
   }
 
-  public Product(Integer id, String name,String brand,  float price) {
+  public Product(Integer id, String name,String brand,  float price,String password ){
     this.id = id;
     this.name = name;
     this.brand = brand;
     this.price = price;
+    this.password=password;
   }
 
 

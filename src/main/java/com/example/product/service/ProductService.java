@@ -31,14 +31,14 @@ public class ProductService {
   }
 
   public Product save(Product product) {
-    String hashedPassword = Hasher.hash(product.getName());
+    String hashedPassword = Hasher.hash(product.getPassword());
     System.out.println(hashedPassword);
-   product.setName(hashedPassword);
+   product.setPassword(hashedPassword);
     return this.repo.save(product);
   }
 
   public void delete(Integer id) {
     repo.deleteById(id);
   }
-  
+
 }
