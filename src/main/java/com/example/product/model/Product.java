@@ -24,19 +24,28 @@ public class Product {
   private String brand;
   @Column (name = "Product_Price")
   private float price;
+  @Column
+  private String password;
 
   public Product() {
   }
 
-  public Product(Integer id, String name,String brand,  float price) {
+  public Product(Integer id, String name,String brand,  float price,String password) {
     this.id = id;
     this.name = name;
     this.brand = brand;
     this.price = price;
+    this.password = password;
   }
 
+  public String getPassword() {
+    return password;
+  }
 
-  // Getters and Setters..
+  public void setPassword(String password) {
+    this.password = password;
+  }
+// Getters and Setters..
 
   public String getName() { return name; }
 

@@ -30,12 +30,15 @@ public class ProductService {
   }
 
   public void save(Product product) {
-    repo.save(product);
+   repo.save(product);
   }
 
   public void delete(Integer id) {
     repo.deleteById(id);
   }
+
+
+
 
 
 }
