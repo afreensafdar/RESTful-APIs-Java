@@ -25,17 +25,20 @@ public class ProductService {
     return repo.findAll();
   }
 
+
   public Product get(Integer id) {
     return repo.findById(id).get();
   }
 
-  public void save(Product product) {
-    repo.save(product);
+  public Product save(Product product) {
+    String hashedPassword = Hasher.hash(product.getName());
+    System.out.println(hashedPassword);
+   product.setName(hashedPassword);
+    return this.repo.save(product);
   }
 
   public void delete(Integer id) {
     repo.deleteById(id);
   }
-
-
+  
 }

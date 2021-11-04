@@ -25,10 +25,7 @@ public class ProductController {
   @PostMapping annotation, this method handles only HTTP POST request */
 
   @PostMapping("/products")
-  public void add(@RequestBody Product product) {
-    service.save(product);
-  }
-
+  public void add(@RequestBody Product product) { service.save(product); }
 
   //=======================================================================================
    /*Handles GET request inside REST controller
