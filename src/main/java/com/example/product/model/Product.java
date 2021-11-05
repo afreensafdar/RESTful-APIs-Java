@@ -6,10 +6,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /* Domain Model Class
 create the Product class to map with the product table in the database */
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity //Jpa automatically maps class to Db table
 @Table(name="PRODUCTS") //name of table where record to be stored ,rename table
 
@@ -24,27 +31,10 @@ public class Product {
   private String brand;
   @Column (name = "Product_Price")
   private float price;
-  @Column
+  @Column (name="password")
   private String password;
 
-  public Product() {
-  }
 
-  public Product(Integer id, String name,String brand,  float price,String password) {
-    this.id = id;
-    this.name = name;
-    this.brand = brand;
-    this.price = price;
-    this.password = password;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
 // Getters and Setters..
 
   public String getName() { return name; }
@@ -71,6 +61,13 @@ public class Product {
 
   public void setPrice(float price) {
     this.price = price;
+  }
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
   }
 
 }
