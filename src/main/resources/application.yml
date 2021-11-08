@@ -1,0 +1,9 @@
+auth0:
+audience: demoAPI
+spring:
+security:
+  oauth2:
+  resourceserver:
+    jwt:
+    issuer-uri: https://dev-c113u-7u.us.auth0.com/
+
