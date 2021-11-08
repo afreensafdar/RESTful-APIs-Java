@@ -7,6 +7,7 @@ Module 2- Intro to REST- Multiverse
 - Maven
 - MySQL Desktop 5.6 =>MySQL workbench 6
 - Test CRUD operations -Postman
+- JWT to access token https://auth0.com
 
 Create Table in MySQL workbench: 
 CREATE TABLE product (
